@@ -1,0 +1,11 @@
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col photo">
+        <div *ngFor="let category of fashion" class="category">
+            <img [src]="category.image" alt="">
+            <p>{{category.text}}</p>
+        </div>
+      </div>
+    </div>
+  </div>

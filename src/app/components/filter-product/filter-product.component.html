@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#" routerLink="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="#" routerLink="/products">All Products</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Filter Product</li>
+        </ol>
+      </nav>
+</div>
+<div class="main container-fluid">
+    <div class="filter">
+        <h4>Filter</h4>
+        <h4>Category:<span>{{products}}</span></h4>
+        <h4>SubCategory</h4>
+        <select class="form-select" aria-label="Default select example" (change)="handleChange($event)">
+            <option value="">Select</option>
+            <option [value]="category.subcategories" *ngFor="let category of subCategories" >{{category.subcategories}}</option>
+        </select>
+    </div>
+    <div class="product">
+        <div class="card" *ngFor="let product of filterProduct">
+            <div class="image">
+                <img [src]="product.pdImg" alt="image">
+            </div>
+            <div class="text">
+                <h5>{{product.pdName}}</h5>
+                <p>{{product.pdDesc}}</p>
+                <p>${{product.pdPrice}}</p>
+                <a href="#" routerLink='/products/{{product.pdCategory}}/{{product.pdId}}'><button class="btn btn-primary">View Product</button></a>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

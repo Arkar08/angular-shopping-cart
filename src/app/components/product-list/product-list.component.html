@@ -1,0 +1,18 @@
+<div class="container-fluid product">
+    <div class="header">
+        <h3>Best Product Listing</h3>
+        <a href="#" routerLink="/products"><img src="../../../assets/images/arrow-right-circle.svg" alt="arrow-right-circle" class="arrow"></a>
+    </div>
+    <div class="list">
+        <div class="row gap-2">
+          <div class="col"  *ngFor="let product of productSlice">
+            <div class="card">
+                <img class="card-img-top" [src]="product.pdImg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{product.pdName}}</h5>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>

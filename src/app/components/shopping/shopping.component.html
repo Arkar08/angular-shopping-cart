@@ -1,0 +1,15 @@
+
+<app-navbar></app-navbar>
+
+<div class="main container-fluid">
+    <img [src]="data.pdImg" alt="img">
+    <div class="text">
+        <h3>{{data.pdName}}</h3>
+        <p>{{data.pdDesc}}</p>
+        <p>${{data.pdPrice}}</p>
+        <div  class="btns">
+            <button class="btn btn-secondary" *ngFor="let d of getSize">{{d}}</button>
+        </div>
+        <button class="btn btn-primary">Add To Cart</button>
+    </div>
+</div>
