@@ -12,6 +12,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { AllProductComponent } from './components/all-product/all-product.component';
 import { FilterProductComponent } from './components/filter-product/filter-product.component';
 import { ShoppingComponent } from './components/shopping/shopping.component';
+import { DataStorageService } from './service/data-storage.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { ShoppingComponent } from './components/shopping/shopping.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

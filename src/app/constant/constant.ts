@@ -17,22 +17,22 @@ export const fashion:any[]=[
   {
     id:1,
     image:"../assets/images/fashion.webp",
-    text:'Fashion'
+    text:'fashion'
   },
   {
     id:2,
     image:"../assets/images/electronic.webp",
-    text:"Electronic"
+    text:"homeandfurniture"
   },
   {
     id:3,
     image:"../assets/images/appliance.webp",
-    text:"Appliance"
+    text:"appliances"
   },
   {
     id:4,
-    image:"../assets/images/mobile.webp",
-    text:"Mobile"
+    image:"../assets/images/toy-1.webp",
+    text:"toys"
   },
 ]
 

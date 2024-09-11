@@ -1,74 +1,53 @@
 <app-navbar></app-navbar>
-
-<div class="main">
-    <div class="card">
-        <div class="card-list">
-            <img src="../../../assets/images/hnf-curtain-2.webp" alt="image">
-            <div class="name">
-                <p>product Name</p>
-                <p>Price</p>
-                <button class="btn btn-danger">Remove</button>
-                <div class="count">
-                    <button>-</button>
-                    <p class="text">0</p>
-                    <button>+</button>
-                </div>
+<div class="container-fluid">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#" routerLink="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="#" routerLink="/products">All Products</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Cart</li>
+        </ol>
+      </nav>
+</div>
+<div class="main" *ngIf="cartProduct.length !== 0">
+    <div class="card" >
+        <div class="card-list" *ngFor="let product of cartProduct">
+            <div>
+                <img [src]="product.pdImg" alt="image">
             </div>
-        </div>
-        <div class="card-list">
-            <img src="../../../assets/images/hnf-curtain-2.webp" alt="image">
             <div class="name">
-                <p>product Name</p>
-                <p>Price</p>
-                <button class="btn btn-danger">Remove</button>
+                <p>{{product.pdName}}</p>
+                <p>${{product.pdPrice}}</p>
+                <button class="btn btn-danger" (click)="remove(product)">Remove</button>
                 <div class="count">
-                    <button>-</button>
-                    <p class="text">0</p>
-                    <button>+</button>
-                </div>
-            </div>
-        </div>
-        <div class="card-list">
-            <img src="../../../assets/images/hnf-curtain-2.webp" alt="image">
-            <div class="name">
-                <p>product Name</p>
-                <p>Price</p>
-                <button class="btn btn-danger">Remove</button>
-                <div class="count">
-                    <button>-</button>
-                    <p class="text">0</p>
-                    <button>+</button>
-                </div>
-            </div>
-        </div>
-        <div class="card-list">
-            <img src="../../../assets/images/hnf-curtain-2.webp" alt="image">
-            <div class="name">
-                <p>product Name</p>
-                <p>Price</p>
-                <button class="btn btn-danger">Remove</button>
-                <div class="count">
-                    <button>-</button>
-                    <p class="text">0</p>
-                    <button>+</button>
-                </div>
-            </div>
-        </div>
-        <div class="card-list">
-            <img src="../../../assets/images/hnf-curtain-2.webp" alt="image">
-            <div class="name">
-                <p>product Name</p>
-                <p>Price</p>
-                <button class="btn btn-danger">Remove</button>
-                <div class="count">
-                    <button>-</button>
-                    <p class="text">0</p>
-                    <button>+</button>
+                    <button (click)="addQty(product,'minus')">-</button>
+                    <p class="text">{{product.qty}}</p>
+                    <button (click)="addQty(product,'plus')">+</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="transaction">
-        
+        <div class="detail">
+            <h3>Price Details</h3>
+        </div>
+
+        <div >
+            <div class="price">
+                <h5>Price ({{totalCart}})</h5>
+                <h5>$ {{totalAmount}}</h5>
+            </div>
+            <div class="price">
+                <h5>Delivery</h5>
+                <h5>Free</h5>
+            </div>
+        </div>
+        <div class="total">
+            <h3>Total Amount</h3>
+            <h3>$ {{totalAmount}}</h3>
+        </div>
     </div>
+</div>
+<div *ngIf="cartProduct.length === 0" class="cart">
+    <h3>Cart is empty</h3>
+    <a href="#" routerLink="/products"><button class="btn btn-primary">Go To Shopping</button></a>
 </div>

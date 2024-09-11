@@ -1,10 +1,14 @@
+nav{
+    padding:30px;
+}
+.breadcrumb-item{
+    font-size: 20px;
+}
 .main{
     display: flex;
     justify-content: space-around;
-    align-items: center;
     margin-top: 30px;
     background-color: whitesmoke;
-    height: 80%;
     padding: 50px;
 }
 img{

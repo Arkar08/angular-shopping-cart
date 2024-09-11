@@ -8,13 +8,13 @@
         </ol>
       </nav>
 </div>
-<div class="main container-fluid">
+<div class="main">
     <div class="filter">
         <h4>Filter</h4>
         <h4>Category:<span>{{products}}</span></h4>
-        <h4>SubCategory</h4>
+        <h4>SubCategory:</h4>
         <select class="form-select" aria-label="Default select example" (change)="handleChange($event)">
-            <option value="">Select</option>
+            <option value="all">All</option>
             <option [value]="category.subcategories" *ngFor="let category of subCategories" >{{category.subcategories}}</option>
         </select>
     </div>

@@ -18,6 +18,7 @@ h3{
     font-weight: 500;
     color:rgb(61, 171, 235);
     text-decoration: underline;
+    user-select: none;
 }
 .arrow{
     width: 50px;

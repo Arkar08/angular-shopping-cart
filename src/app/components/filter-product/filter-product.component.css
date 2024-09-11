@@ -39,9 +39,7 @@ span{
     padding: 20px;
     border-radius: 5px;
 }
-.image{
-    width: 300px;
-}
+
 img{
     width: 200px;
     height: 200px;
@@ -49,6 +47,7 @@ img{
 }
 .text{
     flex: 1;
+    margin-left: 30px;
 }
 option{
     text-transform: capitalize;
@@ -56,32 +55,22 @@ option{
 @media (max-width:768px) {
     .main{
         flex-direction: column;
+        overflow-x: hidden;
     }
     .filter{
         margin-left: 50px;
     }
     .product{
-        flex: 0;
-        align-items: center;
-        justify-content: center;
+        overflow-x: hidden;
     }
     .card{
         flex-direction: column;
-        width: 350px;
-        margin:10px auto;
+        width: 400px;
+        margin: 10px auto;
     }
-}
-@media (max-width:376px) {
-    .main{
-        flex-direction: column;
-    }
-    .filter{
-        margin-left: 50px;
-    }
-    .product{
+    .text{
         flex: 0;
-    }
-    .card{
-        flex-direction: column;
+        margin-left: 0px;
+        margin-top: 10px;
     }
 }

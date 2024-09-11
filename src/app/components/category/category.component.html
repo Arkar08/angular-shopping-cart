@@ -3,8 +3,8 @@
     <div class="row">
       <div class="col photo">
         <div *ngFor="let category of fashion" class="category">
-            <img [src]="category.image" alt="">
-            <p>{{category.text}}</p>
+            <a href="#" routerLink="/products/{{category.text}}"><img [src]="category.image" alt="category_image">
+            <p>{{category.text}}</p></a>
         </div>
       </div>
     </div>

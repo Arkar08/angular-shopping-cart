@@ -6,12 +6,14 @@
     <div class="list">
         <div class="row gap-2">
           <div class="col"  *ngFor="let product of productSlice">
-            <div class="card">
+            <a href="#" routerLink="/products/{{product.pdCategory}}/{{product.pdId}}">
+              <div class="card">
                 <img class="card-img-top" [src]="product.pdImg" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">{{product.pdName}}</h5>
                 </div>
               </div>
+            </a>
           </div>
         </div>
     </div>

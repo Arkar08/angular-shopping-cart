@@ -1,6 +1,15 @@
 
 <app-navbar></app-navbar>
-
+<div class="container-fluid">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#" routerLink="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="#" routerLink="/products">All Products</a></li>
+          <li class="breadcrumb-item"><a href="#" routerLink="/cart">Cart</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{data.pdName}}</li>
+        </ol>
+      </nav>
+</div>
 <div class="main container-fluid">
     <img [src]="data.pdImg" alt="img">
     <div class="text">
@@ -10,6 +19,7 @@
         <div  class="btns">
             <button class="btn btn-secondary" *ngFor="let d of getSize">{{d}}</button>
         </div>
-        <button class="btn btn-primary">Add To Cart</button>
+        <button class="btn btn-primary" (click)="handleClick(data)" *ngIf="cart === false">Add To Cart</button>
+        <button class="btn btn-primary" *ngIf="cart === true" routerLink="/cart">Go To Cart</button>
     </div>
 </div>
