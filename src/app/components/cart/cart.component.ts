@@ -40,13 +40,14 @@ export class CartComponent implements OnInit {
 
   addQty(data:any,type:string){
     this.storeData =[];
+    this.totalAmount = 0;
     var qty = data.qty;
    if(type === 'plus'){
     this.cartProduct.filter((p:any)=>{
       if(p.pdId === data.pdId){
-        p.qty = qty+1;;
-        this.totalAmount = p.pdPrice * p.qty +this.totalAmount;
+        p.qty = qty + 1;
       }
+      this.totalAmount = p.pdPrice * p.qty + this.totalAmount;
     })
     this.storeData = this.cartProduct;
     this.dataStorage.storeCartData(this.storeData)
@@ -55,12 +56,12 @@ export class CartComponent implements OnInit {
    if(type === 'minus'){
     this.cartProduct.filter((p:any)=>{
       if(p.pdId === data.pdId){
-        p.qty = qty -1 ;
-        this.totalAmount = p.pdPrice * p.qty + this.totalAmount;
-        if(p.qty < 1){
-          p.qty = 1;
-          this.totalAmount = p.pdPrice * p.qty;
-        }
+        p.qty = qty - 1 ;
+      }
+      this.totalAmount = p.pdPrice * p.qty +this.totalAmount;
+      if(p.qty < 1){
+        p.qty = 1;
+        this.totalAmount = p.pdPrice * p.qty;
       }
     })
     this.storeData = this.cartProduct;
